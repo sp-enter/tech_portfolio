@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SP Tech — RPG Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+  <div class="scanlines"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="brand-icon">◈</span>
+        <span class="brand-name">SP TECH</span>
+        <span class="brand-ver">v2.0</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero"         class="nav-a">Profile</a></li>
+        <li><a href="#skills"       class="nav-a">Skill Tree</a></li>
+        <li><a href="#quests"       class="nav-a">Quest Log</a></li>
+        <li><a href="#timeline"     class="nav-a">Adventure</a></li>
+        <li><a href="#inventory"    class="nav-a">Inventory</a></li>
+        <li><a href="#achievements" class="nav-a">Badges</a></li>
+        <li><a href="#contact"      class="nav-a boss-link">Boss Room</a></li>
+      </ul>
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">ONLINE</span>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero"         class="mob-a">Profile</a>
+      <a href="#skills"       class="mob-a">Skill Tree</a>
+      <a href="#quests"       class="mob-a">Quest Log</a>
+      <a href="#timeline"     class="mob-a">Adventure</a>
+      <a href="#inventory"    class="mob-a">Inventory</a>
+      <a href="#achievements" class="mob-a">Badges</a>
+      <a href="#contact"      class="mob-a">Boss Room</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+
+      <!-- Character Card -->
+      <div class="char-card" id="charCard">
+        <div class="cc-corner tl"></div><div class="cc-corner tr"></div>
+        <div class="cc-corner bl"></div><div class="cc-corner br"></div>
+        <div class="cc-scan-line"></div>
+
+        <div class="cc-header">
+          <div class="cc-badge class-badge">WEB DEV STUDIO</div>
+          <div class="cc-badge rank-badge">ELITE BUILDER</div>
+        </div>
+
+        <div class="cc-avatar-zone">
+          <div class="cc-ring r1"></div>
+          <div class="cc-ring r2"></div>
+          <div class="cc-ring r3"></div>
+          <div class="cc-avatar">
+            <span class="cc-initials">SP</span>
+          </div>
+          <div class="cc-online-dot"></div>
+          <span class="cc-online-label">ONLINE</span>
+        </div>
+
+        <div class="cc-name">SP TECH</div>
+
+        <div class="cc-level-row">
+          <span class="lvl-star">★</span>
+          <span class="lvl-pre">LEVEL</span>
+          <span class="lvl-num">22</span>
+          <span class="lvl-pre">DEVELOPER STUDIO</span>
+        </div>
+
+        <div class="cc-xp-wrap">
+          <div class="xp-top">
+            <span class="xp-label">EXP</span>
+            <span class="xp-val" id="xpVal">0 / 10000</span>
+          </div>
+          <div class="xp-track">
+            <div class="xp-fill" id="xpFill"></div>
+            <div class="xp-glow-dot" id="xpDot"></div>
+          </div>
+          <div class="xp-pct" id="xpPct">0%</div>
+        </div>
+
+        <div class="cc-meta">
+          <div class="meta-row"><span class="meta-icon">⌘</span><span class="meta-lbl">CLASS</span><span class="meta-val">Creative Tech Studio</span></div>
+          <div class="meta-row"><span class="meta-icon">◉</span><span class="meta-lbl">SPEC</span><span class="meta-val">Web Dev · UI Design</span></div>
+          <div class="meta-row"><span class="meta-icon">⚡</span><span class="meta-lbl">PATH</span><span class="meta-val">Dual Skill System</span></div>
+        </div>
+      </div>
+
+      <!-- Hero Right -->
+      <div class="hero-text">
+        <div class="hero-sys-tag">// SYSTEM INITIALIZED — WORLD LOADED</div>
+
+        <h1 class="hero-h1">
+          <span class="h1-line1">WELCOME TO</span>
+          <span class="h1-line2 glitch" data-text="SP TECH WORLD">SP TECH WORLD</span>
+        </h1>
+
+        <p class="hero-p">
+          You have entered the <span class="gn">SP Tech</span> developer realm — a living RPG world where
+          every website is a conquered quest, every skill is a levelled-up ability, and every line of
+          code is a power earned. The <span class="cy">Web Development</span> path is <span class="gn">ACTIVE</span>.
+          Graphic Design awaits future unlock.
+        </p>
+
+        <div class="hero-paths">
+          <div class="path-pill active-path">
+            <span class="path-dot active"></span>
+            <span>🟢 Web Development — ACTIVE</span>
+          </div>
+          <div class="path-pill locked-path">
+            <span class="path-dot locked"></span>
+            <span>🔒 Graphic Design — LOCKED</span>
+          </div>
+        </div>
+
+        <div class="hero-btns">
+          <a href="#quests" class="btn btn-primary">⚔ ENTER WORLD</a>
+          <a href="#skills" class="btn btn-ghost">◈ VIEW SKILL TREE</a>
+        </div>
+
+        <div class="hero-counters">
+          <div class="hc"><span class="hc-n" data-target="5">0</span><span class="hc-l">Quests Done</span></div>
+          <div class="hc"><span class="hc-n" data-target="6">0</span><span class="hc-l">Skills Active</span></div>
+          <div class="hc"><span class="hc-n" data-target="3">0</span><span class="hc-l">Years Journey</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-down">
+      <span class="sd-label">SCROLL TO EXPLORE</span>
+      <div class="sd-arrows"><span>▼</span><span>▼</span><span>▼</span></div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ══ -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-hdr">
+        <div class="sec-tag">// SKILL_TREE.EXE</div>
+        <h2 class="sec-title">SKILL <span class="gn-text">TREE</span></h2>
+        <p class="sec-sub">Two paths. One active, one awaiting unlock. The journey continues.</p>
+      </div>
+
+      <div class="skill-paths">
+        <!-- ACTIVE PATH -->
+        <div class="skill-path-col">
+          <div class="path-header active-header">
+            <div class="ph-dot active-ph"></div>
+            <span class="ph-label">🟢 WEB DEVELOPMENT — ACTIVE PATH</span>
+          </div>
+          <div class="skills-list">
+
+            <div class="skill-row" data-pts="92">
+              <div class="sk-icon strength"><span>⚔</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr">STRENGTH</div><div class="sk-name">HTML5 — Structure Mastery</div></div><div class="sk-lvl">92</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar" data-w="92"></div></div>
+                <div class="sk-hint">Semantic markup, accessibility & document architecture</div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-pts="88">
+              <div class="sk-icon agility"><span>💨</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr">AGILITY</div><div class="sk-name">CSS3 — Styling & Animation</div></div><div class="sk-lvl">88</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar" data-w="88"></div></div>
+                <div class="sk-hint">Responsive layouts, transitions, and visual polish</div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-pts="81">
+              <div class="sk-icon intel"><span>🧠</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr">INTELLIGENCE</div><div class="sk-name">JavaScript — Logic Engine</div></div><div class="sk-lvl">81</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar" data-w="81"></div></div>
+                <div class="sk-hint">DOM control, APIs, async patterns & interactivity</div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-pts="78">
+              <div class="sk-icon magic"><span>🔮</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr">MAGIC</div><div class="sk-name">PHP — Backend Systems</div></div><div class="sk-lvl">78</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar" data-w="78"></div></div>
+                <div class="sk-hint">Server-side logic, databases & backend architecture</div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-pts="95">
+              <div class="sk-icon craft"><span>🎨</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr">CRAFTING</div><div class="sk-name">UI Design — Interface Craft</div></div><div class="sk-lvl">95</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar" data-w="95"></div></div>
+                <div class="sk-hint">Beautiful, functional interfaces designed to convert</div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-pts="84">
+              <div class="sk-icon git"><span>🌿</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr">TACTICS</div><div class="sk-name">Git & GitHub — Version Control</div></div><div class="sk-lvl">84</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar" data-w="84"></div></div>
+                <div class="sk-hint">Branch, commit, push — time-travel for code</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- LOCKED PATH -->
+        <div class="skill-path-col locked-col">
+          <div class="path-header locked-header">
+            <div class="ph-dot locked-ph"></div>
+            <span class="ph-label">🔒 GRAPHIC DESIGN — LOCKED PATH</span>
+          </div>
+          <div class="locked-banner">
+            <div class="lock-icon-big">🔒</div>
+            <div class="lock-title">SKILL TREE UNDER DEVELOPMENT</div>
+            <div class="lock-sub">This path will unlock in a future update. Stay tuned.</div>
+          </div>
+          <div class="skills-list locked-skills">
+
+            <div class="skill-row locked-row">
+              <div class="sk-icon locked-icon"><span>🔒</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr locked-attr">LOCKED</div><div class="sk-name locked-name">Photoshop — Image Arcane</div></div><div class="sk-lvl locked-lvl">??</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar locked-bar" data-w="0"></div></div>
+              </div>
+            </div>
+
+            <div class="skill-row locked-row">
+              <div class="sk-icon locked-icon"><span>🔒</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr locked-attr">LOCKED</div><div class="sk-name locked-name">Illustrator — Vector Scroll</div></div><div class="sk-lvl locked-lvl">??</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar locked-bar" data-w="0"></div></div>
+              </div>
+            </div>
+
+            <div class="skill-row locked-row">
+              <div class="sk-icon locked-icon"><span>🔒</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr locked-attr">LOCKED</div><div class="sk-name locked-name">Figma — Design Forge</div></div><div class="sk-lvl locked-lvl">??</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar locked-bar" data-w="0"></div></div>
+              </div>
+            </div>
+
+            <div class="skill-row locked-row">
+              <div class="sk-icon locked-icon"><span>🔒</span></div>
+              <div class="sk-body">
+                <div class="sk-top"><div><div class="sk-attr locked-attr">LOCKED</div><div class="sk-name locked-name">Branding — Identity Craft</div></div><div class="sk-lvl locked-lvl">??</div></div>
+                <div class="sk-bar-bg"><div class="sk-bar locked-bar" data-w="0"></div></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUESTS ══ -->
+  <section id="quests">
+    <div class="section-inner">
+      <div class="section-hdr">
+        <div class="sec-tag">// QUEST_LOG.DAT</div>
+        <h2 class="sec-title">MAIN <span class="gn-text">QUESTS</span></h2>
+        <p class="sec-sub">Conquered missions from the Web Development path. Each one a battle won.</p>
+      </div>
+      <div class="quests-grid">
+
+        <div class="qc reveal-q">
+          <div class="qc-corners"><div class="qcc tl"></div><div class="qcc tr"></div><div class="qcc bl"></div><div class="qcc br"></div></div>
+          <div class="qc-badge">🏆 COMPLETED</div>
+          <div class="qc-diff diff-medium">MEDIUM</div>
+          <div class="qc-icon">💪</div>
+          <h3 class="qc-name">Aura Fits Website</h3>
+          <p class="qc-desc">A complete fitness brand website with workout tracking, membership sections, and a responsive layout built to drive action.</p>
+          <div class="qc-tags"><span class="qt">HTML</span><span class="qt">CSS</span><span class="qt">JavaScript</span></div>
+          <div class="qc-footer">
+            <div class="qc-reward">💰 +400 XP</div>
+            <a href="https://sp-enter.github.io/aura/" target="_blank" class="btn btn-quest">VIEW QUEST ↗</a>
+          </div>
+        </div>
+
+        <div class="qc reveal-q">
+          <div class="qc-corners"><div class="qcc tl"></div><div class="qcc tr"></div><div class="qcc bl"></div><div class="qcc br"></div></div>
+          <div class="qc-badge">🏆 COMPLETED</div>
+          <div class="qc-diff diff-hard">HARD</div>
+          <div class="qc-icon">🌆</div>
+          <h3 class="qc-name">Cyberpunk Landing Page</h3>
+          <p class="qc-desc">An immersive cyberpunk-themed one-page site with neon effects, animated canvas backgrounds, custom cursor, and glitch text.</p>
+          <div class="qc-tags"><span class="qt">HTML</span><span class="qt">CSS</span><span class="qt">Canvas JS</span></div>
+          <div class="qc-footer">
+            <div class="qc-reward">💰 +550 XP</div>
+            <a href="https://sp-enter.github.io/cyberpunk/" target="_blank" class="btn btn-quest">VIEW QUEST ↗</a>
+          </div>
+        </div>
+
+        <div class="qc reveal-q">
+          <div class="qc-corners"><div class="qcc tl"></div><div class="qcc tr"></div><div class="qcc bl"></div><div class="qcc br"></div></div>
+          <div class="qc-badge">🏆 COMPLETED</div>
+          <div class="qc-diff diff-medium">MEDIUM</div>
+          <div class="qc-icon">🚀</div>
+          <h3 class="qc-name">Space Exploration Website</h3>
+          <p class="qc-desc">Interactive planet explorer with animated cards, orbit effects, starfield backgrounds, and fact popups for each planet.</p>
+          <div class="qc-tags"><span class="qt">HTML</span><span class="qt">CSS</span><span class="qt">JavaScript</span></div>
+          <div class="qc-footer">
+            <div class="qc-reward">💰 +380 XP</div>
+            <a href="https://sp-enter.github.io/space1/" target="_blank" class="btn btn-quest">VIEW QUEST ↗</a>
+          </div>
+        </div>
+
+        <div class="qc reveal-q">
+          <div class="qc-corners"><div class="qcc tl"></div><div class="qcc tr"></div><div class="qcc bl"></div><div class="qcc br"></div></div>
+          <div class="qc-badge">🏆 COMPLETED</div>
+          <div class="qc-diff diff-easy">EASY</div>
+          <div class="qc-icon">🗂</div>
+          <h3 class="qc-name">Web Portfolio System</h3>
+          <p class="qc-desc">A clean, professional web portfolio showcasing projects, skills, and contact — built to impress clients and collaborators.</p>
+          <div class="qc-tags"><span class="qt">HTML</span><span class="qt">CSS</span><span class="qt">JS</span></div>
+          <div class="qc-footer">
+            <div class="qc-reward">💰 +250 XP</div>
+            <a href="https://sp-enter.github.io/webportfolio/" target="_blank" class="btn btn-quest">VIEW QUEST ↗</a>
+          </div>
+        </div>
+
+        <div class="qc reveal-q">
+          <div class="qc-corners"><div class="qcc tl"></div><div class="qcc tr"></div><div class="qcc bl"></div><div class="qcc br"></div></div>
+          <div class="qc-badge">🏆 COMPLETED</div>
+          <div class="qc-diff diff-legendary">LEGENDARY</div>
+          <div class="qc-icon">⚔</div>
+          <h3 class="qc-name">RPG Portfolio System</h3>
+          <p class="qc-desc">A fully interactive RPG-themed developer portfolio — the most ambitious project yet. Character screens, quest logs, skill trees, and achievements.</p>
+          <div class="qc-tags"><span class="qt">HTML</span><span class="qt">CSS</span><span class="qt">Vanilla JS</span></div>
+          <div class="qc-footer">
+            <div class="qc-reward">💰 +900 XP</div>
+            <a href="https://sp-enter.github.io/rpg/" target="_blank" class="btn btn-quest">VIEW QUEST ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TIMELINE ══ -->
+  <section id="timeline">
+    <div class="section-inner">
+      <div class="section-hdr">
+        <div class="sec-tag">// ADVENTURE_LOG.EXE</div>
+        <h2 class="sec-title">THE <span class="gn-text">JOURNEY</span></h2>
+        <p class="sec-sub">A glowing progression path — from the first line of code to building a brand.</p>
+      </div>
+      <div class="timeline-wrap">
+        <div class="tl-spine"></div>
+
+        <div class="tl-item tl-left reveal-tl">
+          <div class="tl-node"><div class="tl-ring"></div><div class="tl-core">⚡</div></div>
+          <div class="tl-card">
+            <div class="tl-year">2023</div>
+            <div class="tl-title">The Awakening</div>
+            <p class="tl-desc">The journey begins. First contact with HTML and CSS, learning web design fundamentals, and discovering a passion for building things on the internet.</p>
+            <div class="tl-tags-row"><span class="qt">HTML</span><span class="qt">CSS</span><span class="qt">Web Design</span></div>
+            <div class="tl-xp">+200 XP EARNED</div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right reveal-tl">
+          <div class="tl-node"><div class="tl-ring"></div><div class="tl-core">🌐</div></div>
+          <div class="tl-card">
+            <div class="tl-year">2024</div>
+            <div class="tl-title">First Conquests</div>
+            <p class="tl-desc">Built the first interactive websites for real-world use. JavaScript unlocked. Dynamic pages, hover effects, and responsive design mastered.</p>
+            <div class="tl-tags-row"><span class="qt">JavaScript</span><span class="qt">Responsive</span><span class="qt">Interactive</span></div>
+            <div class="tl-xp">+480 XP EARNED</div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-left reveal-tl">
+          <div class="tl-node"><div class="tl-ring"></div><div class="tl-core">🔥</div></div>
+          <div class="tl-card">
+            <div class="tl-year">2025</div>
+            <div class="tl-title">Frontend Mastery</div>
+            <p class="tl-desc">Mastered the full frontend stack. Cyberpunk UI, Space Explorer, and advanced animations built. PHP unlocked for backend systems. Skill tree almost maxed.</p>
+            <div class="tl-tags-row"><span class="qt">PHP</span><span class="qt">CSS Animation</span><span class="qt">Canvas API</span></div>
+            <div class="tl-xp">+750 XP EARNED</div>
+          </div>
+        </div>
+
+        <div class="tl-item tl-right reveal-tl active-node">
+          <div class="tl-node"><div class="tl-ring"></div><div class="tl-core">◈</div></div>
+          <div class="tl-card active-card">
+            <div class="tl-year current-yr">2026 — NOW</div>
+            <div class="tl-title">Building SP Tech</div>
+            <p class="tl-desc">Building SP Tech as a full creative brand. RPG portfolios, immersive web experiences, and the Graphic Design path queued for unlock. The world expands.</p>
+            <div class="tl-tags-row"><span class="qt">Brand Building</span><span class="qt">RPG UX</span><span class="qt">SP Tech</span></div>
+            <div class="tl-xp active-xp">⚡ ACTIVE QUEST — XP ACCUMULATING</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INVENTORY ══ -->
+  <section id="inventory">
+    <div class="section-inner">
+      <div class="section-hdr">
+        <div class="sec-tag">// INVENTORY.DAT</div>
+        <h2 class="sec-title">DEVELOPER <span class="gn-text">INVENTORY</span></h2>
+        <p class="sec-sub">Every tool is a weapon. Hover any slot to inspect the item.</p>
+      </div>
+      <div class="inv-grid">
+
+        <div class="inv-slot equipped-slot">
+          <div class="inv-rar legendary">LEGENDARY</div>
+          <div class="inv-ico">🖥</div>
+          <div class="inv-nm">VS Code</div>
+          <div class="inv-tp">Primary Weapon</div>
+          <div class="inv-tip">The IDE of champions. Extensions armed. Terminal open. Dark theme forever.</div>
+        </div>
+
+        <div class="inv-slot equipped-slot">
+          <div class="inv-rar epic">EPIC</div>
+          <div class="inv-ico">🌿</div>
+          <div class="inv-nm">Git</div>
+          <div class="inv-tp">Time Control</div>
+          <div class="inv-tip">Branch, commit, rollback. Every mistake is recoverable. Every progress is saved.</div>
+        </div>
+
+        <div class="inv-slot equipped-slot">
+          <div class="inv-rar epic">EPIC</div>
+          <div class="inv-ico">🐙</div>
+          <div class="inv-nm">GitHub</div>
+          <div class="inv-tp">Repository Vault</div>
+          <div class="inv-tip">Where code lives publicly. Quests hosted here: sp-enter.github.io</div>
+        </div>
+
+        <div class="inv-slot equipped-slot">
+          <div class="inv-rar rare">RARE</div>
+          <div class="inv-ico">🎨</div>
+          <div class="inv-nm">Figma</div>
+          <div class="inv-tp">Design Scroll</div>
+          <div class="inv-tip">Wireframes, mockups, and design systems live here before dev begins.</div>
+        </div>
+
+        <div class="inv-slot locked-slot">
+          <div class="inv-rar training">TRAINING</div>
+          <div class="inv-ico">🔒</div>
+          <div class="inv-nm">Photoshop</div>
+          <div class="inv-tp">In Training</div>
+          <div class="inv-tip">Part of the locked Graphic Design path. Unlocks in a future update.</div>
+        </div>
+
+        <div class="inv-slot equipped-slot">
+          <div class="inv-rar rare">RARE</div>
+          <div class="inv-ico">🔍</div>
+          <div class="inv-nm">Chrome DevTools</div>
+          <div class="inv-tp">Debug Lens</div>
+          <div class="inv-tip">Inspect, debug, and profile. The developer's third eye.</div>
+        </div>
+
+        <div class="inv-slot equipped-slot">
+          <div class="inv-rar uncommon">UNCOMMON</div>
+          <div class="inv-ico">🌐</div>
+          <div class="inv-nm">Browser Testing</div>
+          <div class="inv-tp">QA Shield</div>
+          <div class="inv-tip">Chrome, Firefox, Safari — every build tested across the browser realm.</div>
+        </div>
+
+        <div class="inv-slot empty-slot"><div class="inv-plus">＋</div><div class="inv-nm">Slot Open</div></div>
+        <div class="inv-slot empty-slot"><div class="inv-plus">＋</div><div class="inv-nm">Slot Open</div></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ACHIEVEMENTS ══ -->
+  <section id="achievements">
+    <div class="section-inner">
+      <div class="section-hdr">
+        <div class="sec-tag">// ACHIEVEMENTS.LOG</div>
+        <h2 class="sec-title">UNLOCKED <span class="gn-text">BADGES</span></h2>
+        <p class="sec-sub">Milestones forged through consistency, shipped code, and relentless craft.</p>
+      </div>
+      <div class="ach-grid">
+
+        <div class="ach-card reveal-ach" data-delay="0">
+          <div class="ach-glow-bg"></div>
+          <div class="ach-ico">🏆</div>
+          <div class="ach-nm">First Website Deployed</div>
+          <div class="ach-desc">Took an idea, wrote the code, hit publish. The first step into the dev world.</div>
+          <div class="ach-rar rar-gold">GOLD</div>
+        </div>
+
+        <div class="ach-card reveal-ach" data-delay="1">
+          <div class="ach-glow-bg"></div>
+          <div class="ach-ico">🌆</div>
+          <div class="ach-nm">Cyberpunk UI Created</div>
+          <div class="ach-desc">Built a full neon cyberpunk interface with custom canvas animations and glitch effects.</div>
+          <div class="ach-rar rar-epic">EPIC</div>
+        </div>
+
+        <div class="ach-card reveal-ach" data-delay="2">
+          <div class="ach-glow-bg"></div>
+          <div class="ach-ico">⚔</div>
+          <div class="ach-nm">RPG Portfolio Built</div>
+          <div class="ach-desc">Turned a developer portfolio into a playable RPG game world. Unconventional. Unforgettable.</div>
+          <div class="ach-rar rar-legendary">LEGENDARY</div>
+        </div>
+
+        <div class="ach-card reveal-ach" data-delay="3">
+          <div class="ach-glow-bg"></div>
+          <div class="ach-ico">⚡</div>
+          <div class="ach-nm">JavaScript Mastery Unlocked</div>
+          <div class="ach-desc">Conquered the DOM, async logic, Canvas API, and interactive interface patterns.</div>
+          <div class="ach-rar rar-epic">EPIC</div>
+        </div>
+
+        <div class="ach-card reveal-ach" data-delay="4">
+          <div class="ach-glow-bg"></div>
+          <div class="ach-ico">🎭</div>
+          <div class="ach-nm">UI Animation Specialist</div>
+          <div class="ach-desc">Created smooth transitions, keyframe animations, and CSS effects that bring interfaces to life.</div>
+          <div class="ach-rar rar-gold">GOLD</div>
+        </div>
+
+        <div class="ach-card reveal-ach" data-delay="5">
+          <div class="ach-glow-bg"></div>
+          <div class="ach-ico">◈</div>
+          <div class="ach-nm">SP Tech Brand Founded</div>
+          <div class="ach-desc">Levelled up from developer to creative studio. SP Tech is officially live.</div>
+          <div class="ach-rar rar-legendary">LEGENDARY</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="boss-bg-fx"></div>
+    <div class="section-inner contact-inner">
+      <div class="sec-tag">⚔ FINAL BOSS ROOM</div>
+      <h2 class="sec-title">CHALLENGE <span class="gn-text">SP TECH</span></h2>
+      <p class="boss-intro">You've navigated the world of SP Tech. Explored the skills, conquered quests, and reviewed the arsenal. Now you stand at the final room. Do you dare issue a challenge?</p>
+
+      <div class="boss-profile">
+        <div class="bp-corner tl"></div><div class="bp-corner tr"></div>
+        <div class="bp-corner bl"></div><div class="bp-corner br"></div>
+        <div class="bp-scan"></div>
+        <div class="bp-avatar">SP</div>
+        <div class="bp-info">
+          <div class="bp-name">SP TECH</div>
+          <div class="bp-class">The Creative Tech Sorcerer</div>
+        </div>
+        <div class="bp-hp-wrap">
+          <div class="bp-hp-lbl">AVAILABILITY ▸</div>
+          <div class="bp-hp-bg"><div class="bp-hp-fill" id="bossHp"></div></div>
+          <div class="bp-hp-status">OPEN TO WORK</div>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <a href="tel:08065664487" class="contact-card">
+          <div class="cc-icon">📞</div>
+          <div class="cc-lbl">PHONE 1</div>
+          <div class="cc-val">08065664487</div>
+          <div class="cc-act">Call Now →</div>
+        </a>
+        <a href="tel:09115029166" class="contact-card">
+          <div class="cc-icon">📞</div>
+          <div class="cc-lbl">PHONE 2</div>
+          <div class="cc-val">09115029166</div>
+          <div class="cc-act">Call Now →</div>
+        </a>
+        <a href="tel:08140199546" class="contact-card">
+          <div class="cc-icon">📞</div>
+          <div class="cc-lbl">PHONE 3</div>
+          <div class="cc-val">08140199546</div>
+          <div class="cc-act">Call Now →</div>
+        </a>
+        <a href="mailto:splinfluenceenterprise@gmail.com" class="contact-card">
+          <div class="cc-icon">📧</div>
+          <div class="cc-lbl">EMAIL</div>
+          <div class="cc-val">splinfluenceenterprise@gmail.com</div>
+          <div class="cc-act">Send Message →</div>
+        </a>
+        <a href="https://github.com/sp-enter" target="_blank" class="contact-card">
+          <div class="cc-icon">🐙</div>
+          <div class="cc-lbl">GITHUB</div>
+          <div class="cc-val">github.com/sp-enter</div>
+          <div class="cc-act">View Code →</div>
+        </a>
+      </div>
+
+      <button class="btn btn-primary btn-quest-start" id="startQuestBtn">⚔ START QUEST</button>
+
+      <!-- Modal -->
+      <div class="quest-overlay" id="questOverlay">
+        <div class="quest-modal">
+          <div class="qm-c tl"></div><div class="qm-c tr"></div>
+          <div class="qm-c bl"></div><div class="qm-c br"></div>
+          <div class="qm-title">⚔ QUEST INITIATED</div>
+          <div class="qm-sub">Choose your method of contact to begin the collaboration.</div>
+          <div class="qm-options">
+            <a href="mailto:splinfluenceenterprise@gmail.com" class="qm-opt"><span>📧</span> Send an Email</a>
+            <a href="tel:08065664487" class="qm-opt"><span>📞</span> Call 08065664487</a>
+            <a href="tel:09115029166" class="qm-opt"><span>📞</span> Call 09115029166</a>
+            <a href="tel:08140199546" class="qm-opt"><span>📞</span> Call 08140199546</a>
+            <a href="https://github.com/sp-enter" target="_blank" class="qm-opt"><span>🐙</span> GitHub Profile</a>
+          </div>
+          <button class="qm-close" id="qmClose">✕ Retreat</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="fb-icon">◈</span> SP TECH</div>
+      <p class="footer-copy">© 2026 SP Tech · Built with 💚 and Vanilla Code · All quests reserved.</p>
+      <div class="footer-right"><span class="lvl-badge">LVL 22</span><span class="ft-status">ONLINE</span></div>
+    </div>
+  </footer>
+
+  <div class="xp-toast" id="xpToast">⚡ XP GAINED</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
